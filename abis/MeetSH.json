@@ -1,0 +1,245 @@
+[
+  { "inputs": [], "stateMutability": "nonpayable", "type": "constructor" },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "index",
+        "type": "uint256"
+      }
+    ],
+    "name": "LightLand",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "previousOwner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "OwnershipTransferred",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          { "internalType": "address", "name": "host", "type": "address" },
+          {
+            "internalType": "address[]",
+            "name": "guests",
+            "type": "address[]"
+          },
+          { "internalType": "string", "name": "name", "type": "string" },
+          { "internalType": "string", "name": "url", "type": "string" },
+          { "internalType": "enum LandType", "name": "typ", "type": "uint8" },
+          {
+            "components": [
+              { "internalType": "int32", "name": "lat", "type": "int32" },
+              { "internalType": "int32", "name": "lng", "type": "int32" }
+            ],
+            "internalType": "struct Position",
+            "name": "pos",
+            "type": "tuple"
+          },
+          { "internalType": "uint256", "name": "price", "type": "uint256" }
+        ],
+        "internalType": "struct Land[]",
+        "name": "lands",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "addLands",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "name": "allLands",
+    "outputs": [
+      { "internalType": "address", "name": "host", "type": "address" },
+      { "internalType": "string", "name": "name", "type": "string" },
+      { "internalType": "string", "name": "url", "type": "string" },
+      { "internalType": "enum LandType", "name": "typ", "type": "uint8" },
+      {
+        "components": [
+          { "internalType": "int32", "name": "lat", "type": "int32" },
+          { "internalType": "int32", "name": "lng", "type": "int32" }
+        ],
+        "internalType": "struct Position",
+        "name": "pos",
+        "type": "tuple"
+      },
+      { "internalType": "uint256", "name": "price", "type": "uint256" }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "index", "type": "uint256" },
+      { "internalType": "string", "name": "name", "type": "string" },
+      { "internalType": "string", "name": "url", "type": "string" }
+    ],
+    "name": "buyLand",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "index", "type": "uint256" },
+      { "internalType": "enum LandType", "name": "typ", "type": "uint8" }
+    ],
+    "name": "changeType",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "landCount",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "landStart",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "name": "lastLight",
+    "outputs": [
+      { "internalType": "uint256", "name": "blkNum", "type": "uint256" },
+      { "internalType": "uint256", "name": "locIdx", "type": "uint256" }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          { "internalType": "int32", "name": "lat", "type": "int32" },
+          { "internalType": "int32", "name": "lng", "type": "int32" }
+        ],
+        "internalType": "struct Position",
+        "name": "pos",
+        "type": "tuple"
+      }
+    ],
+    "name": "lightLand",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          { "internalType": "int32", "name": "lat", "type": "int32" },
+          { "internalType": "int32", "name": "lng", "type": "int32" }
+        ],
+        "internalType": "struct Position",
+        "name": "pos",
+        "type": "tuple"
+      },
+      { "internalType": "string", "name": "name", "type": "string" },
+      { "internalType": "string", "name": "url", "type": "string" },
+      { "internalType": "enum LandType", "name": "typ", "type": "uint8" }
+    ],
+    "name": "mintLand",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "index", "type": "uint256" },
+      { "internalType": "string", "name": "name", "type": "string" },
+      { "internalType": "string", "name": "url", "type": "string" }
+    ],
+    "name": "modLand",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "index", "type": "uint256" },
+      { "internalType": "uint256", "name": "price", "type": "uint256" }
+    ],
+    "name": "modPrice",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "", "type": "address" },
+      { "internalType": "uint256", "name": "", "type": "uint256" }
+    ],
+    "name": "ownedLands",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "owner",
+    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "int32", "name": "", "type": "int32" },
+      { "internalType": "int32", "name": "", "type": "int32" }
+    ],
+    "name": "posLand",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "renounceOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "newOwner", "type": "address" }
+    ],
+    "name": "transferOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "withdraw",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  { "stateMutability": "payable", "type": "receive" }
+]

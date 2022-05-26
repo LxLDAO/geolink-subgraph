@@ -1,0 +1,16 @@
+{
+  "name": "MeetSH",
+  "license": "UNLICENSED",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ WorldDogs/MeetSH",
+    "create-local": "graph create --node http://localhost:8020/ WorldDogs/MeetSH",
+    "remove-local": "graph remove --node http://localhost:8020/ WorldDogs/MeetSH",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 WorldDogs/MeetSH"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.30.0",
+    "@graphprotocol/graph-ts": "0.27.0"
+  }
+}

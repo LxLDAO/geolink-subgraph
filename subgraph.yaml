@@ -1,0 +1,26 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: undefined
+    network: rinkeby
+    source:
+      address: "0xb8ec9b6798275FDea556CB0119b815B26Fa52898"
+      abi: MeetSH
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - LightLand
+        - OwnershipTransferred
+      abis:
+        - name: MeetSH
+          file: ./abis/MeetSH.json
+      eventHandlers:
+        - event: LightLand(uint256)
+          handler: handleLightLand
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+      file: ./src/meet-sh.ts
